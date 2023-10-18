@@ -33,6 +33,7 @@ export default {
       enteredCode: null, // введенный код
       codeOk: false, // ошибка ввода кода
       errorCodeText: "", // текст ошибки ввода кода
+      codes: []
     };
   },
   computed: mapGetters(["CODES"]),
@@ -45,7 +46,7 @@ export default {
   },
   methods: {
     // Достаем экшен
-    ...mapActions(["GET_CODE"]),
+    ...mapActions(["GET_CODE", "GET_USERS"]),
 
     /** Запускаем таймер */
     startTimer() {
@@ -58,12 +59,13 @@ export default {
       clearTimeout(this.timer);
     },
     /** Проверить код */
-    checkCode() {
-      this.GET_CODE();
-      this.codeOk = this.CODES.includes(this.enteredCode) ? true : false ;
+    async checkCode() {
+      await this.GET_CODE();
+
       console.log('this.CODES', this.CODES)
-      console.log('this.enteredCode', this.enteredCode)
-      console.log('this.codeOk', this.codeOk)
+      // console.log('this.enteredCode', this.enteredCode)
+      // console.log('this.codeOk', this.codeOk)
+      // console.log(this.CODES.find(code => code.enteredCode === this.enteredCode))
       // if (!this.errorCode) {
       //   this.$router.push("/circs");
       // }

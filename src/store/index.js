@@ -93,5 +93,15 @@ export default new Vuex.Store({
         throw Error
       }
     },
+    // async GET_USERS() {
+    //   const res = await fetch('http://localhost:3001/data')
+    //   const users = await res.json()
+    //   if(res.ok){
+    //     console.log(users)
+    //   } else {
+    //     console.log('Ошибка получения данных с сервера')
+    //     throw Error
+    //   }
+    // },
   }
 })

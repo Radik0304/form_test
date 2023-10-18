@@ -102,13 +102,16 @@
   ],
   "codes": [
     {
-      "enteredCode": 123
+      "enteredCode": 123,
+      "userId": 1
     },
     {
-      "enteredCode": 456
+      "enteredCode": 456,
+      "userId": 2
     },
     {
-      "enteredCode": 789
+      "enteredCode": 789,
+      "userId": 3
     }
   ]
 }
