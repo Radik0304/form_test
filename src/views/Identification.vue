@@ -6,7 +6,7 @@
     </header>
     <div class="input">
       <label for="code">Код</label>
-      <input type="number" v-model="enteredCode" />
+      <input type="number" v-model="inputCode" />
     </div>
 
     <div class="check-code-container">
@@ -30,13 +30,13 @@ export default {
     return {
       currentTime: 1, //время начала отсчета
       timer: null, // таймер
-      enteredCode: null, // введенный код
       codeOk: false, // ошибка ввода кода
       errorCodeText: "", // текст ошибки ввода кода
-      codes: []
+      inputCode: null, // введенный код,
     };
   },
-  computed: mapGetters(["CODES"]),
+
+  computed: mapGetters(["USERS"]),
 
   mounted() {
     this.startTimer();
@@ -46,7 +46,7 @@ export default {
   },
   methods: {
     // Достаем экшен
-    ...mapActions(["GET_CODE", "GET_USERS"]),
+    ...mapActions(["GET_USERS"]),
 
     /** Запускаем таймер */
     startTimer() {
@@ -60,15 +60,10 @@ export default {
     },
     /** Проверить код */
     async checkCode() {
-      await this.GET_CODE();
-
-      console.log('this.CODES', this.CODES)
-      // console.log('this.enteredCode', this.enteredCode)
-      // console.log('this.codeOk', this.codeOk)
-      // console.log(this.CODES.find(code => code.enteredCode === this.enteredCode))
-      // if (!this.errorCode) {
-      //   this.$router.push("/circs");
-      // }
+      await this.GET_USERS();
+      this.USERS.some(user => user.enteredCode === this.inputCode)
+      console.log('this.enteredCode -', this.inputCode)
+      console.log(this.USERS.some(user => user.enteredCode === this.inputCode))
     },
   },
   watch: {

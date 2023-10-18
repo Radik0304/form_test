@@ -11,7 +11,7 @@ export default new Vuex.Store({
     date_create: null,
     country: '',
     mail: null,
-    codes: []
+    users: []
   },
   getters: {
     NAME(state){
@@ -32,8 +32,8 @@ export default new Vuex.Store({
     MAIL(state){
       return state.mail
     },
-    CODES(state){
-      return state.codes
+    USERS(state){
+      return state.users
     }
   },
   mutations: {
@@ -55,39 +55,18 @@ export default new Vuex.Store({
     SET_MAIL(state, payload){
       state.mail = payload
     },
-    SET_CODES(state, payload){
-      state.codes = payload
+    SET_USERS(state, payload){
+      state.users = payload
     }
   },
   actions: {
-    // SET_NAME(context, payload) {
-    //   context.commit('SET_NAME', payload);
-    // },
-    // SET_SECOND_NAME(context, payload) {
-    //   context.commit('SET_SECOND_NAME', payload);
-    // },
-    // SET_THIRD_NAME(context, payload) {
-    //   context.commit('SET_THIRD_NAME', payload);
-    // },
-    // SET_DATE_CREATE(context, payload) {
-    //   context.commit(' SET_DATE_CREATE', payload);
-    // },
-    // SET_COUNTRY(context, payload) {
-    //   context.commit('SET_COUNTRY', payload);
-    // },
-    // SET_MAIL(context, payload) {
-    //   context.commit('SET_MAIL', payload);
-    // },
-    // UPDATE_CODES(context, payload){
-    //   context.commit('SET_CODES', payload)
-    // },
-
-    /** Получаем из базы код */
-    async GET_CODE(context) {
-      const res = await fetch('http://localhost:3001/codes')
-      const codes = await res.json()
+    /** Получаем из базы данные */
+    async GET_USERS(context) {
+      const res = await fetch('http://localhost:3001/data')
+      const usersInfo = await res.json()
       if(res.ok){
-        context.commit('SET_CODES', codes)
+        console.log( usersInfo)
+        context.commit('SET_USERS', usersInfo)
       } else {
         console.log('Ошибка получения данных с сервера')
         throw Error

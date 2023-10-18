@@ -7,7 +7,8 @@
       "date_create": "25.12.96",
       "country": "Россия",
       "mail": "444@mail.com",
-      "id": 1
+      "id": 1,
+      "enteredCode": 432
     },
     {
       "name": "dfgdfg",
@@ -16,7 +17,8 @@
       "dateCreate": "2023-10-28",
       "country": "dfgdfgd",
       "mail": "fgdfg",
-      "id": 2
+      "id": 2,
+      "enteredCode": 574
     },
     {
       "name": "",
@@ -25,7 +27,8 @@
       "dateCreate": null,
       "country": "",
       "mail": null,
-      "id": 3
+      "id": 3,
+      "enteredCode": 111
     },
     {
       "name": "",
@@ -34,7 +37,8 @@
       "dateCreate": null,
       "country": "",
       "mail": null,
-      "id": 4
+      "id": 4,
+      "enteredCode": 463
     },
     {
       "name": "23",
@@ -43,7 +47,8 @@
       "dateCreate": "2023-10-03",
       "country": "23",
       "mail": null,
-      "id": 5
+      "id": 5,
+      "enteredCode": 7895
     },
     {
       "name": "312",
@@ -52,7 +57,8 @@
       "dateCreate": "2023-10-05",
       "country": "123",
       "mail": null,
-      "id": 6
+      "id": 6,
+      "enteredCode": 123
     },
     {
       "name": "23",
@@ -61,7 +67,8 @@
       "dateCreate": "2023-10-12",
       "country": "123",
       "mail": null,
-      "id": 7
+      "id": 7,
+      "enteredCode": 908
     },
     {
       "name": "22311",
@@ -70,7 +77,8 @@
       "dateCreate": null,
       "country": "12312",
       "mail": "3123",
-      "id": 8
+      "id": 8,
+      "enteredCode": 789999
     },
     {
       "name": "Джон",
@@ -79,7 +87,8 @@
       "dateCreate": "2023-10-18",
       "country": "Италия",
       "mail": null,
-      "id": 9
+      "id": 9,
+      "enteredCode": 789
     },
     {
       "name": "имя",
@@ -88,7 +97,8 @@
       "dateCreate": "2023-09-27",
       "country": "самара",
       "mail": null,
-      "id": 10
+      "id": 10,
+      "enteredCode": 456
     },
     {
       "name": "fgdfgd",
@@ -97,21 +107,8 @@
       "dateCreate": "2023-10-06",
       "country": "dfgdf",
       "mail": "df",
-      "id": 11
-    }
-  ],
-  "codes": [
-    {
-      "enteredCode": 123,
-      "userId": 1
-    },
-    {
-      "enteredCode": 456,
-      "userId": 2
-    },
-    {
-      "enteredCode": 789,
-      "userId": 3
+      "id": 11,
+      "enteredCode": 123
     }
   ]
 }
