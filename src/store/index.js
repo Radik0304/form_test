@@ -32,6 +32,9 @@ export default new Vuex.Store({
     MAIL(state){
       return state.mail
     },
+    CODES(state){
+      return state.codes
+    }
   },
   mutations: {
     SET_NAME(state, payload){
@@ -57,40 +60,38 @@ export default new Vuex.Store({
     }
   },
   actions: {
-    SET_NAME(context, payload) {
-      context.commit('SET_NAME', payload);
-    },
-    SET_SECOND_NAME(context, payload) {
-      context.commit('SET_SECOND_NAME', payload);
-    },
-    SET_THIRD_NAME(context, payload) {
-      context.commit('SET_THIRD_NAME', payload);
-    },
-    SET_DATE_CREATE(context, payload) {
-      context.commit(' SET_DATE_CREATE', payload);
-    },
-    SET_COUNTRY(context, payload) {
-      context.commit('SET_COUNTRY', payload);
-    },
-    SET_MAIL(context, payload) {
-      context.commit('SET_MAIL', payload);
-    },
-    UPDATE_CODES(context, payload){
-      context.commit('SET_CODES', payload)
-    },
+    // SET_NAME(context, payload) {
+    //   context.commit('SET_NAME', payload);
+    // },
+    // SET_SECOND_NAME(context, payload) {
+    //   context.commit('SET_SECOND_NAME', payload);
+    // },
+    // SET_THIRD_NAME(context, payload) {
+    //   context.commit('SET_THIRD_NAME', payload);
+    // },
+    // SET_DATE_CREATE(context, payload) {
+    //   context.commit(' SET_DATE_CREATE', payload);
+    // },
+    // SET_COUNTRY(context, payload) {
+    //   context.commit('SET_COUNTRY', payload);
+    // },
+    // SET_MAIL(context, payload) {
+    //   context.commit('SET_MAIL', payload);
+    // },
+    // UPDATE_CODES(context, payload){
+    //   context.commit('SET_CODES', payload)
+    // },
 
-    /** Получаем список задач */
+    /** Получаем из базы код */
     async GET_CODE(context) {
       const res = await fetch('http://localhost:3001/codes')
       const codes = await res.json()
       if(res.ok){
-        context.commit('UPDATE_CODES', codes)
+        context.commit('SET_CODES', codes)
       } else {
         console.log('Ошибка получения данных с сервера')
         throw Error
       }
     },
-  },
-  modules: {
   }
 })

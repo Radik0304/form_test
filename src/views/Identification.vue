@@ -10,28 +10,33 @@
     </div>
 
     <div class="check-code-container">
-      <button :disabled="currentTime !== 0" @submit="checkCode">Проверить код</button>
+      <button :disabled="currentTime !== 0" @click="checkCode">
+        Проверить код
+      </button>
       <div v-if="currentTime">
         <span>Отправить код повторно через</span>
         <div>{{ currentTime }}</div>
       </div>
-      <p>Неверный код</p>
+      <!-- <p v-if="enteredCode && !codeOk">Неверный код</p> -->
     </div>
   </div>
 </template>
 
 <script>
+import { mapActions, mapGetters } from "vuex";
 export default {
   name: "IdentificationConfirmation",
   data() {
     return {
-      currentTime: 5, //время начала отсчета
+      currentTime: 1, //время начала отсчета
       timer: null, // таймер
       enteredCode: null, // введенный код
-      errorCode: false, // ошибка ввода кода
-      errorCodeText: ''// текст ошибки ввода кода
+      codeOk: false, // ошибка ввода кода
+      errorCodeText: "", // текст ошибки ввода кода
     };
   },
+  computed: mapGetters(["CODES"]),
+
   mounted() {
     this.startTimer();
   },
@@ -39,6 +44,9 @@ export default {
     this.stopTimer();
   },
   methods: {
+    // Достаем экшен
+    ...mapActions(["GET_CODE"]),
+
     /** Запускаем таймер */
     startTimer() {
       this.timer = setInterval(() => {
@@ -49,22 +57,16 @@ export default {
     stopTimer() {
       clearTimeout(this.timer);
     },
-    /** Отправить код */
-    async checkCode(e){
-        e.preventDefault()
-          const response = await fetch ('http://localhost:3001/codes', {
-            method: "POST",
-            body: JSON.stringify(this.enteredCode),
-            headers: {
-              "Content-Type": "application/json",
-              "Authorization": "Bearer 12345",
-            },
-          })
-          if(response.ok){
-            this.$router.push('/identification')
-          } else {
-            console.log('Неверный код')
-          }
+    /** Проверить код */
+    checkCode() {
+      this.GET_CODE();
+      this.codeOk = this.CODES.includes(this.enteredCode) ? true : false ;
+      console.log('this.CODES', this.CODES)
+      console.log('this.enteredCode', this.enteredCode)
+      console.log('this.codeOk', this.codeOk)
+      // if (!this.errorCode) {
+      //   this.$router.push("/circs");
+      // }
     },
   },
   watch: {

@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import PersonalData from '../views/PersonalData';
 import Identification from '../views/Identification.vue'
+import CircsContract from '../views/Circs'
 
 Vue.use(VueRouter)
 
@@ -15,6 +16,11 @@ const routes = [
     path: '/identification',
     name: 'identification',
     component: Identification
+  },
+  {
+    path: '/circs',
+    name: 'circs',
+    component: CircsContract
   }
 ]
 
