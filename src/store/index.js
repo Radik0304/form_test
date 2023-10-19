@@ -65,7 +65,6 @@ export default new Vuex.Store({
       const res = await fetch('http://localhost:3001/data')
       const usersInfo = await res.json()
       if(res.ok){
-        console.log( usersInfo)
         context.commit('SET_USERS', usersInfo)
       } else {
         console.log('Ошибка получения данных с сервера')

@@ -62,8 +62,6 @@ export default {
     async checkCode() {
       await this.GET_USERS();
       this.USERS.some(user => user.enteredCode === this.inputCode)
-      console.log('this.enteredCode -', this.inputCode)
-      console.log(this.USERS.some(user => user.enteredCode === this.inputCode))
     },
   },
   watch: {
