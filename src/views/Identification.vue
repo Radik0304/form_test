@@ -1,5 +1,6 @@
 <template>
   <div class="identification">
+    <div class="progress_bar">ШАГ 2</div>
     <header>
       <h3>Подтверждение удаленной идентификации</h3>
       <span>Мы отправили SMS с кодом на ваш номер телефона</span>

@@ -1,9 +1,8 @@
 <template>
   <div class="circs__container">
+    <div class="progress_bar">ШАГ 3</div>
     <h3>Условия</h3>
     <div>
-      <div>Это типа прогресс бар</div>
-      <span> Шаг 5 из 5 </span>
     </div>
     <table>
         <thead>Подписание договора</thead>
@@ -35,14 +34,19 @@
     </div>
 
     <footer>
-        <button class="sign">Подписать договор</button>
+        <button class="sign" @click="sign">Подписать договор</button>
     </footer>
   </div>
 </template>
 
 <script>
 export default({
-    name: "CircsContract"
+    name: "CircsContract",
+    methods: {
+        sign(){
+            this.$router.push('/check-dates')
+        }
+    }
 });
 </script>
 
@@ -73,6 +77,6 @@ footer{
 }
 .sign {
     width: 100px;
-    height: 30px
+    height: 40px
 }
 </style>

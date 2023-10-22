@@ -1,5 +1,6 @@
 <template>
   <div class="pesonal-data">
+    <div class="progress_bar">ШАГ 1</div>
     <h2>Личные данные</h2>
     <form class="form">
         <input type="text" placeholder="Фамилия*" v-model="secondName">
@@ -109,5 +110,11 @@ input {
 }
 .error-text {
   color: brown;
+}
+</style>
+<style>
+.progress_bar{
+  margin-top: 1rem;
+  font-weight: bold;
 }
 </style>
