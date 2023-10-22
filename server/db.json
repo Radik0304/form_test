@@ -8,7 +8,9 @@
       "country": "Россия",
       "mail": "444@mail.com",
       "id": 1,
-      "enteredCode": 432
+      "entered_code": 432,
+      "sum": 15000,
+      "date_return": "12.12.2023"
     },
     {
       "name": "dfgdfg",
@@ -18,7 +20,9 @@
       "country": "dfgdfgd",
       "mail": "fgdfg",
       "id": 2,
-      "enteredCode": 574
+      "enteredCode": 574,
+      "sum": 43400,
+      "date_return": "05.10.2025"
     },
     {
       "name": "",
@@ -28,7 +32,9 @@
       "country": "",
       "mail": null,
       "id": 3,
-      "enteredCode": 111
+      "enteredCode": 111,
+      "sum": 154400,
+      "date_return": "03.10.2042"
     },
     {
       "name": "",
@@ -38,7 +44,9 @@
       "country": "",
       "mail": null,
       "id": 4,
-      "enteredCode": 463
+      "enteredCode": 463,
+      "sum": 155400,
+      "date_return": "12.06.2033"
     },
     {
       "name": "23",
@@ -48,7 +56,9 @@
       "country": "23",
       "mail": null,
       "id": 5,
-      "enteredCode": 7895
+      "enteredCode": 7895,
+      "sum": 15500,
+      "date_return": "25.07.2024"
     },
     {
       "name": "312",
@@ -58,7 +68,9 @@
       "country": "123",
       "mail": null,
       "id": 6,
-      "enteredCode": 123
+      "enteredCode": 123,
+      "sum": 112300,
+      "date_return": "31.07.2033"
     },
     {
       "name": "23",
@@ -68,7 +80,9 @@
       "country": "123",
       "mail": null,
       "id": 7,
-      "enteredCode": 908
+      "enteredCode": 908,
+      "sum": 112300,
+      "date_return": "28.02.2032"
     },
     {
       "name": "22311",
@@ -78,7 +92,9 @@
       "country": "12312",
       "mail": "3123",
       "id": 8,
-      "enteredCode": 789999
+      "enteredCode": 789999,
+      "sum": 112300,
+      "date_return": "27.03.2058"
     },
     {
       "name": "Джон",
@@ -88,7 +104,9 @@
       "country": "Италия",
       "mail": null,
       "id": 9,
-      "enteredCode": 789
+      "enteredCode": 789,
+      "sum": 112344,
+      "date_return": "22.05.2044"
     },
     {
       "name": "имя",
@@ -98,7 +116,9 @@
       "country": "самара",
       "mail": null,
       "id": 10,
-      "enteredCode": 456
+      "enteredCode": 456,
+      "sum": 112348,
+      "date_return": "29.05.2040"
     },
     {
       "name": "fgdfgd",
@@ -108,16 +128,9 @@
       "country": "dfgdf",
       "mail": "df",
       "id": 11,
-      "enteredCode": 123
-    },
-    {
-      "name": "fdfd",
-      "secondName": "dfdf",
-      "thirdName": "fdfdf",
-      "dateCreate": "2023-10-12",
-      "country": "fdfd",
-      "mail": "fdfdf",
-      "id": 12
+      "enteredCode": 123,
+      "sum": 43433,
+      "date_return": "29.09.2094"
     }
   ]
 }

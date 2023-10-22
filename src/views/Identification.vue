@@ -39,6 +39,7 @@ export default {
   computed: mapGetters(["USERS"]),
 
   mounted() {
+    this.GET_USERS();
     this.startTimer();
   },
   destroyed() {
@@ -59,9 +60,12 @@ export default {
       clearTimeout(this.timer);
     },
     /** Проверить код */
-    async checkCode() {
-      await this.GET_USERS();
-      this.USERS.some(user => user.enteredCode === this.inputCode)
+    checkCode() {
+      const isCodeFind = this.USERS.some(user => user.entered_code === Number(this.inputCode))
+      // проверяем есть ли такой код в массиве
+      if(isCodeFind){
+        this.$router.push('/circs')
+      }
     },
   },
   watch: {
